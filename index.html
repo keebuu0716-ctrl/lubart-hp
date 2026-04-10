@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>株式会社〇〇ケア｜あなたらしい毎日を、一緒に。</title>
+  <!-- Google Fonts：日本語フォント（400・700のみ読み込んで高速化） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <!-- ロゴ -->
+      <a href="#top" class="header__logo">
+        <span class="header__logo-mark">♡</span>
+        <span class="header__logo-text">〇〇ケア</span>
+      </a>
+
+      <!-- PC用ナビゲーション -->
+      <nav class="header__nav" aria-label="グローバルナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="#about" class="header__nav-link">会社紹介</a></li>
+          <li><a href="#services" class="header__nav-link">サービス</a></li>
+          <li><a href="#staff" class="header__nav-link">スタッフ</a></li>
+          <li><a href="#recruit" class="header__nav-link">採用情報</a></li>
+          <li><a href="#contact" class="header__nav-link header__nav-link--cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーボタン（スマホ用） -->
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+
+    <!-- スマホ用ドロワーメニュー -->
+    <nav class="drawer" id="drawer" aria-label="モバイルナビゲーション">
+      <ul class="drawer__list">
+        <li><a href="#about" class="drawer__link">会社紹介</a></li>
+        <li><a href="#services" class="drawer__link">サービス</a></li>
+        <li><a href="#staff" class="drawer__link">スタッフ</a></li>
+        <li><a href="#recruit" class="drawer__link">採用情報</a></li>
+        <li><a href="#contact" class="drawer__link drawer__link--cta">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== ヒーローセクション ===== -->
+  <section class="hero" id="top">
+    <div class="hero__bg"></div>
+
+    <!-- 装飾用の丸（背景アクセント） -->
+    <div class="hero__deco hero__deco--1" aria-hidden="true"></div>
+    <div class="hero__deco hero__deco--2" aria-hidden="true"></div>
+    <div class="hero__deco hero__deco--3" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <!-- 左：テキストエリア -->
+      <div class="hero__content fade-in">
+        <p class="hero__sub">あなたらしい毎日を、一緒に。</p>
+        <h1 class="hero__title">
+          寄り添う心で、<br />
+          笑顔のある<br />暮らしへ。
+        </h1>
+        <p class="hero__desc">
+          私たちは、利用者お一人おひとりの「その人らしさ」を大切に、<br class="sp-none" />
+          温かく、専門的なケアを提供しています。
+        </p>
+        <div class="hero__btns">
+          <a href="#services" class="btn btn--primary">サービスを見る</a>
+          <a href="#contact" class="btn btn--outline">お問い合わせ</a>
+        </div>
+      </div>
+
+      <!-- 右：メイン画像エリア -->
+      <div class="hero__visual fade-in">
+        <!-- メイン画像（実際の写真に差し替えてください） -->
+        <div class="hero__img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=75&auto=format"
+            alt="元気に遊ぶ子どもたちの様子"
+            class="hero__img"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+        <!-- 浮かぶカード：安心の実績 -->
+        <div class="hero__badge hero__badge--top">
+          <span class="hero__badge-icon">😊</span>
+          <span class="hero__badge-text">利用者満足度<strong>98%</strong></span>
+        </div>
+        <!-- 浮かぶカード：スタッフ数 -->
+        <div class="hero__badge hero__badge--bottom">
+          <span class="hero__badge-icon">👩‍⚕️</span>
+          <span class="hero__badge-text">専門スタッフ<strong>30名</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- スクロール誘導インジケーター -->
+    <div class="hero__scroll">
+      <span class="hero__scroll-text">Scroll</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ===== 会社紹介セクション ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">About Us</p>
+        <h2 class="section-title">私たちについて</h2>
+      </div>
+
+      <div class="about__grid">
+        <!-- コンセプトテキスト -->
+        <div class="about__text fade-in">
+          <h3 class="about__heading">「じぶんらしく」を、ともに。</h3>
+          <p class="about__body">
+            株式会社〇〇ケアは、○○県○○市で介護保険・障害者総合支援サービスを提供しています。
+            創業以来、利用者さまとご家族の気持ちに寄り添い、「その人らしい生活」を支え続けてきました。
+          </p>
+          <p class="about__body">
+            スタッフ一人ひとりが専門知識と温かい心を持ち、
+            安心・安全・笑顔あふれる毎日をお届けすることをミッションとしています。
+          </p>
+          <dl class="about__info">
+            <div class="about__info-row">
+              <dt>設立</dt>
+              <dd>20○○年○月</dd>
+            </div>
+            <div class="about__info-row">
+              <dt>所在地</dt>
+              <dd>〒000-0000 ○○県○○市○○町1-2-3</dd>
+            </div>
+            <div class="about__info-row">
+              <dt>電話</dt>
+              <dd>000-000-0000</dd>
+            </div>
+            <div class="about__info-row">
+              <dt>営業時間</dt>
+              <dd>月〜土 9:00〜18:00</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- 数字で見る実績 -->
+        <div class="about__stats fade-in">
+          <div class="stat-card">
+            <span class="stat-card__num">500<small>名以上</small></span>
+            <span class="stat-card__label">累計支援実績</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num">20<small>年</small></span>
+            <span class="stat-card__label">地域での実績</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num">98<small>%</small></span>
+            <span class="stat-card__label">利用者満足度</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num">30<small>名</small></span>
+            <span class="stat-card__label">専門スタッフ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== サービス紹介セクション ===== -->
+  <section class="services section section--dark" id="services">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Services</p>
+        <h2 class="section-title">サービス紹介</h2>
+        <p class="section-desc">
+          一人ひとりの状態・ご要望に合わせた、多彩なサービスをご用意しています。
+        </p>
+      </div>
+
+      <div class="services__grid">
+        <!-- サービスカード 1 -->
+        <article class="service-card fade-in">
+          <div class="service-card__icon">🏠</div>
+          <h3 class="service-card__title">訪問介護</h3>
+          <p class="service-card__body">
+            ご自宅に訪問し、入浴・食事・排泄の介助など、日常生活をサポートします。
+            利用者さまが慣れ親しんだ環境で安心して暮らせるよう支援します。
+          </p>
+          <a href="#contact" class="service-card__link">詳しく見る →</a>
+        </article>
+
+        <!-- サービスカード 2 -->
+        <article class="service-card fade-in">
+          <div class="service-card__icon">🌤️</div>
+          <h3 class="service-card__title">デイサービス</h3>
+          <p class="service-card__body">
+            日帰りで施設に通い、食事・入浴・レクリエーションなどを楽しんでいただけます。
+            仲間との交流で笑顔と活力が生まれます。
+          </p>
+          <a href="#contact" class="service-card__link">詳しく見る →</a>
+        </article>
+
+        <!-- サービスカード 3 -->
+        <article class="service-card fade-in">
+          <div class="service-card__icon">♿</div>
+          <h3 class="service-card__title">障害者支援</h3>
+          <p class="service-card__body">
+            障害者総合支援法に基づき、就労支援・生活介護・相談支援など、
+            自立した生活を送るための幅広いサポートを提供します。
+          </p>
+          <a href="#contact" class="service-card__link">詳しく見る →</a>
+        </article>
+
+        <!-- サービスカード 4 -->
+        <article class="service-card fade-in">
+          <div class="service-card__icon">📋</div>
+          <h3 class="service-card__title">ケアマネジメント</h3>
+          <p class="service-card__body">
+            介護支援専門員（ケアマネジャー）が、利用者さまに最適なケアプランを作成。
+            関係機関と連携しながら包括的な支援を行います。
+          </p>
+          <a href="#contact" class="service-card__link">詳しく見る →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== スタッフ紹介セクション ===== -->
+  <section class="staff section" id="staff">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Staff</p>
+        <h2 class="section-title">スタッフ紹介</h2>
+        <p class="section-desc">
+          経験豊富な専門スタッフが、真心を込めてサポートします。
+        </p>
+      </div>
+
+      <div class="staff__grid">
+        <!-- スタッフカード 1 -->
+        <article class="staff-card fade-in">
+          <div class="staff-card__avatar" aria-hidden="true">👩‍⚕️</div>
+          <h3 class="staff-card__name">山田 花子</h3>
+          <p class="staff-card__role">介護福祉士 / 訪問介護リーダー</p>
+          <p class="staff-card__msg">「笑顔で帰っていただける毎日を大切に」</p>
+        </article>
+
+        <!-- スタッフカード 2 -->
+        <article class="staff-card fade-in">
+          <div class="staff-card__avatar" aria-hidden="true">👨‍⚕️</div>
+          <h3 class="staff-card__name">鈴木 一郎</h3>
+          <p class="staff-card__role">ケアマネジャー / 相談支援専門員</p>
+          <p class="staff-card__msg">「一緒に最善のプランを考えましょう」</p>
+        </article>
+
+        <!-- スタッフカード 3 -->
+        <article class="staff-card fade-in">
+          <div class="staff-card__avatar" aria-hidden="true">👩‍💼</div>
+          <h3 class="staff-card__name">佐藤 美咲</h3>
+          <p class="staff-card__role">サービス提供責任者</p>
+          <p class="staff-card__msg">「安心してお任せください」</p>
+        </article>
+
+        <!-- スタッフカード 4 -->
+        <article class="staff-card fade-in">
+          <div class="staff-card__avatar" aria-hidden="true">👨‍💼</div>
+          <h3 class="staff-card__name">田中 健太</h3>
+          <p class="staff-card__role">生活支援員 / 障害者担当</p>
+          <p class="staff-card__msg">「できることを一緒に増やしていきましょう」</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 採用情報セクション ===== -->
+  <section class="recruit section section--dark" id="recruit">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Recruit</p>
+        <h2 class="section-title">採用情報</h2>
+        <p class="section-desc">
+          一緒に、地域の笑顔を支えてくれる仲間を募集しています。
+        </p>
+      </div>
+
+      <div class="recruit__inner fade-in">
+        <div class="recruit__message">
+          <h3 class="recruit__heading">あなたの「やりたい」を活かせる職場です</h3>
+          <p class="recruit__body">
+            資格の有無や経験年数に関わらず、「人の役に立ちたい」という気持ちを持つ方を歓迎します。
+            充実した研修制度と先輩スタッフのサポートで、未経験からでも安心してスタートできます。
+          </p>
+        </div>
+
+        <!-- 募集職種テーブル -->
+        <div class="recruit__table-wrap">
+          <table class="recruit__table">
+            <thead>
+              <tr>
+                <th>職種</th>
+                <th>雇用形態</th>
+                <th>給与</th>
+                <th>資格</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>訪問介護スタッフ</td>
+                <td>正社員 / パート</td>
+                <td>月給 ○○万円〜</td>
+                <td>介護職員初任者研修以上</td>
+              </tr>
+              <tr>
+                <td>デイサービス介護士</td>
+                <td>正社員 / パート</td>
+                <td>月給 ○○万円〜</td>
+                <td>介護福祉士（優遇）</td>
+              </tr>
+              <tr>
+                <td>障害者支援員</td>
+                <td>正社員 / パート</td>
+                <td>月給 ○○万円〜</td>
+                <td>不問（経験者優遇）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="recruit__cta">
+          <a href="#contact" class="btn btn--primary btn--large">応募・お問い合わせはこちら</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== お問い合わせセクション ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="section-desc">
+          サービスについてのご質問・ご相談は、お気軽にどうぞ。
+        </p>
+      </div>
+
+      <div class="contact__grid fade-in">
+        <!-- 電話 -->
+        <div class="contact-box">
+          <div class="contact-box__icon">📞</div>
+          <h3 class="contact-box__title">お電話でのお問い合わせ</h3>
+          <a href="tel:0000000000" class="contact-box__tel">000-000-0000</a>
+          <p class="contact-box__hours">受付時間：月〜土 9:00〜18:00</p>
+        </div>
+
+        <!-- フォーム -->
+        <form class="contact-form" action="#" method="post" novalidate>
+          <div class="form-group">
+            <label for="name" class="form-label">お名前 <span class="required">必須</span></label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="山田 花子" required />
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="example@mail.com" required />
+          </div>
+          <div class="form-group">
+            <label for="tel" class="form-label">電話番号</label>
+            <input type="tel" id="tel" name="tel" class="form-input" placeholder="000-0000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="お気軽にご記入ください" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">送信する</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <!-- フッターロゴ -->
+        <div class="footer__brand">
+          <a href="#top" class="footer__logo">
+            <span class="header__logo-mark">♡</span>
+            <span class="header__logo-text">〇〇ケア</span>
+          </a>
+          <p class="footer__tagline">あなたらしい毎日を、一緒に。</p>
+        </div>
+
+        <!-- フッターナビ -->
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <ul class="footer__nav-list">
+            <li><a href="#about" class="footer__nav-link">会社紹介</a></li>
+            <li><a href="#services" class="footer__nav-link">サービス</a></li>
+            <li><a href="#staff" class="footer__nav-link">スタッフ</a></li>
+            <li><a href="#recruit" class="footer__nav-link">採用情報</a></li>
+            <li><a href="#contact" class="footer__nav-link">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 株式会社〇〇ケア. All Rights Reserved.</p>
+        <a href="#top" class="footer__totop" aria-label="ページトップへ戻る">↑ TOP</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
