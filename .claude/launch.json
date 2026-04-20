@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "node-server",
+      "runtimeExecutable": "/tmp/node-v22.13.1-darwin-x64/bin/node",
+      "runtimeArgs": ["server.js"],
+      "port": 3456,
+      "autoPort": false
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>株式会社〇〇ケア｜あなたらしい毎日を、一緒に。</title>
+  <title>小児訪問看護ルバート｜株式会社Cantabile</title>
   <!-- Google Fonts：日本語フォント（400・700のみ読み込んで高速化） -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,17 +17,34 @@
     <div class="header__inner">
       <!-- ロゴ -->
       <a href="#top" class="header__logo">
-        <span class="header__logo-mark">♡</span>
-        <span class="header__logo-text">〇〇ケア</span>
+        <!-- 虹アーチSVGロゴ -->
+        <span class="header__logo-icon" aria-hidden="true">
+          <svg class="logo-rainbow" viewBox="0 0 54 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 虹の各アーチ（外→内） -->
+            <path d="M2 30 Q2 4 27 4 Q52 4 52 30" stroke="#ff6b6b" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <path d="M7 30 Q7 9 27 9 Q47 9 47 30"  stroke="#ffb347" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <path d="M12 30 Q12 14 27 14 Q42 14 42 30" stroke="#ffe066" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <path d="M17 30 Q17 18 27 18 Q37 18 37 30" stroke="#7ed957" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <path d="M22 30 Q22 22 27 22 Q32 22 32 30" stroke="#4fc3f7" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <!-- 雲（ハート型の丸） -->
+            <circle cx="6"  cy="29" r="4" fill="white"/>
+            <circle cx="12" cy="29" r="4" fill="white"/>
+            <circle cx="9"  cy="26" r="4" fill="white"/>
+            <circle cx="42" cy="29" r="4" fill="white"/>
+            <circle cx="48" cy="29" r="4" fill="white"/>
+            <circle cx="45" cy="26" r="4" fill="white"/>
+          </svg>
+        </span>
+        <span class="header__logo-text">ルバート</span>
       </a>
 
       <!-- PC用ナビゲーション -->
       <nav class="header__nav" aria-label="グローバルナビゲーション">
         <ul class="header__nav-list">
-          <li><a href="#about" class="header__nav-link">会社紹介</a></li>
-          <li><a href="#services" class="header__nav-link">サービス</a></li>
+          <li><a href="#about" class="header__nav-link">施設について</a></li>
+          <li><a href="#services" class="header__nav-link">支援のポイント</a></li>
+          <li><a href="#flow" class="header__nav-link">1日の流れ</a></li>
           <li><a href="#staff" class="header__nav-link">スタッフ</a></li>
-          <li><a href="#recruit" class="header__nav-link">採用情報</a></li>
           <li><a href="#contact" class="header__nav-link header__nav-link--cta">お問い合わせ</a></li>
         </ul>
       </nav>
@@ -43,10 +60,10 @@
     <!-- スマホ用ドロワーメニュー -->
     <nav class="drawer" id="drawer" aria-label="モバイルナビゲーション">
       <ul class="drawer__list">
-        <li><a href="#about" class="drawer__link">会社紹介</a></li>
-        <li><a href="#services" class="drawer__link">サービス</a></li>
+        <li><a href="#about" class="drawer__link">施設について</a></li>
+        <li><a href="#services" class="drawer__link">支援のポイント</a></li>
+        <li><a href="#flow" class="drawer__link">1日の流れ</a></li>
         <li><a href="#staff" class="drawer__link">スタッフ</a></li>
-        <li><a href="#recruit" class="drawer__link">採用情報</a></li>
         <li><a href="#contact" class="drawer__link drawer__link--cta">お問い合わせ</a></li>
       </ul>
     </nav>
@@ -64,17 +81,17 @@
     <div class="hero__inner">
       <!-- 左：テキストエリア -->
       <div class="hero__content fade-in">
-        <p class="hero__sub">あなたらしい毎日を、一緒に。</p>
+        <p class="hero__sub">小児訪問看護ステーション</p>
         <h1 class="hero__title">
-          寄り添う心で、<br />
-          笑顔のある<br />暮らしへ。
+          お子さまの<br />
+          「できる」を、<br />一緒に増やそう。
         </h1>
         <p class="hero__desc">
-          私たちは、利用者お一人おひとりの「その人らしさ」を大切に、<br class="sp-none" />
-          温かく、専門的なケアを提供しています。
+          リハビリに強い訪問看護ステーション「ルバート」。<br class="sp-none" />
+          PT・ST・看護師が連携し、お子さまの成長を全力でサポートします。
         </p>
         <div class="hero__btns">
-          <a href="#services" class="btn btn--primary">サービスを見る</a>
+          <a href="#services" class="btn btn--primary">支援のポイントを見る</a>
           <a href="#contact" class="btn btn--outline">お問い合わせ</a>
         </div>
       </div>
@@ -85,21 +102,21 @@
         <div class="hero__img-wrap">
           <img
             src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=75&auto=format"
-            alt="元気に遊ぶ子どもたちの様子"
+            alt="笑顔の子どもと支援スタッフ"
             class="hero__img"
             loading="eager"
             decoding="async"
           />
         </div>
-        <!-- 浮かぶカード：安心の実績 -->
+        <!-- 浮かぶカード：ST複数名在籍 -->
         <div class="hero__badge hero__badge--top">
-          <span class="hero__badge-icon">😊</span>
-          <span class="hero__badge-text">利用者満足度<strong>98%</strong></span>
+          <span class="hero__badge-icon">🗣️</span>
+          <span class="hero__badge-text">ST複数名<strong>在籍</strong></span>
         </div>
-        <!-- 浮かぶカード：スタッフ数 -->
+        <!-- 浮かぶカード：全員小児経験者 -->
         <div class="hero__badge hero__badge--bottom">
-          <span class="hero__badge-icon">👩‍⚕️</span>
-          <span class="hero__badge-text">専門スタッフ<strong>30名</strong></span>
+          <span class="hero__badge-icon">👶</span>
+          <span class="hero__badge-text">全員<strong>小児経験者</strong></span>
         </div>
       </div>
     </div>
@@ -111,124 +128,332 @@
     </div>
   </section>
 
-  <!-- ===== 会社紹介セクション ===== -->
+  <!-- ===== 施設についてセクション ===== -->
   <section class="about section" id="about">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">About Us</p>
-        <h2 class="section-title">私たちについて</h2>
+        <h2 class="section-title">施設について</h2>
       </div>
 
       <div class="about__grid">
-        <!-- コンセプトテキスト -->
+        <!-- 施設コメント -->
         <div class="about__text fade-in">
-          <h3 class="about__heading">「じぶんらしく」を、ともに。</h3>
+          <h3 class="about__heading">リハビリに強い、小児専門の訪問看護</h3>
           <p class="about__body">
-            株式会社〇〇ケアは、○○県○○市で介護保険・障害者総合支援サービスを提供しています。
-            創業以来、利用者さまとご家族の気持ちに寄り添い、「その人らしい生活」を支え続けてきました。
+            「小児訪問看護ステーション ルバート」は、リハビリに強い訪問看護ステーションです。
+            大きな特徴はST（言語聴覚士）が複数名在籍すること。PT（理学療法士）や看護師も小児対応経験のあるスタッフが揃い、
+            リハビリも遊びの中で楽しく進めるスタイルを大切にしています。
           </p>
           <p class="about__body">
-            スタッフ一人ひとりが専門知識と温かい心を持ち、
-            安心・安全・笑顔あふれる毎日をお届けすることをミッションとしています。
+            すでに通所や通院でリハビリを利用されている方も、自宅という普段の生活環境でリハビリを導入することで
+            さらに効果を高められる可能性があります。少しでも気になる方は、ぜひ一度ご相談ください。
+            お子さまの「できる」を増やせるよう全力でサポートします。
           </p>
           <dl class="about__info">
             <div class="about__info-row">
-              <dt>設立</dt>
-              <dd>20○○年○月</dd>
+              <dt>事業者名</dt>
+              <dd>小児訪問看護ルバート</dd>
             </div>
             <div class="about__info-row">
-              <dt>所在地</dt>
-              <dd>〒000-0000 ○○県○○市○○町1-2-3</dd>
+              <dt>運営法人</dt>
+              <dd>株式会社Cantabile</dd>
             </div>
             <div class="about__info-row">
-              <dt>電話</dt>
-              <dd>000-000-0000</dd>
+              <dt>サービス種別</dt>
+              <dd>訪問看護（PT・ST・看護師）</dd>
             </div>
             <div class="about__info-row">
-              <dt>営業時間</dt>
-              <dd>月〜土 9:00〜18:00</dd>
+              <dt>対象</dt>
+              <dd>小児（お子さま）</dd>
             </div>
           </dl>
         </div>
 
-        <!-- 数字で見る実績 -->
+        <!-- 数字で見る特徴 -->
         <div class="about__stats fade-in">
           <div class="stat-card">
-            <span class="stat-card__num">500<small>名以上</small></span>
-            <span class="stat-card__label">累計支援実績</span>
+            <span class="stat-card__num">ST<small>複数名</small></span>
+            <span class="stat-card__label">言語聴覚士が在籍</span>
           </div>
           <div class="stat-card">
-            <span class="stat-card__num">20<small>年</small></span>
-            <span class="stat-card__label">地域での実績</span>
+            <span class="stat-card__num">PT<small>在籍</small></span>
+            <span class="stat-card__label">遊び×リハビリ</span>
           </div>
           <div class="stat-card">
-            <span class="stat-card__num">98<small>%</small></span>
-            <span class="stat-card__label">利用者満足度</span>
+            <span class="stat-card__num">100<small>%</small></span>
+            <span class="stat-card__label">小児経験スタッフ</span>
           </div>
           <div class="stat-card">
-            <span class="stat-card__num">30<small>名</small></span>
-            <span class="stat-card__label">専門スタッフ</span>
+            <span class="stat-card__num">3<small>職種</small></span>
+            <span class="stat-card__label">チームで連携</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== サービス紹介セクション ===== -->
+  <!-- ===== 支援のポイントセクション ===== -->
   <section class="services section section--dark" id="services">
     <div class="container">
       <div class="section-header fade-in">
-        <p class="section-label">Services</p>
-        <h2 class="section-title">サービス紹介</h2>
+        <p class="section-label">Our Strengths</p>
+        <h2 class="section-title">支援のポイント・こだわり</h2>
         <p class="section-desc">
-          一人ひとりの状態・ご要望に合わせた、多彩なサービスをご用意しています。
+          ルバートならではの4つの強みで、お子さまの成長をサポートします。
         </p>
       </div>
 
       <div class="services__grid">
-        <!-- サービスカード 1 -->
+        <!-- ポイント 1 -->
         <article class="service-card fade-in">
-          <div class="service-card__icon">🏠</div>
-          <h3 class="service-card__title">訪問介護</h3>
+          <div class="service-card__icon">🗣️</div>
+          <h3 class="service-card__title">リハビリに強い訪問看護。ST複数名が在籍</h3>
           <p class="service-card__body">
-            ご自宅に訪問し、入浴・食事・排泄の介助など、日常生活をサポートします。
-            利用者さまが慣れ親しんだ環境で安心して暮らせるよう支援します。
+            自宅にいながら、PT（理学療法）・ST（言語聴覚療法）を受けることができます。
+            特にST（言語聴覚士）が複数名在籍している点が大きな強み。小児対応可能なSTは数が少なく、
+            希望してもリハビリを受けられない方の受け皿となりたいという思いで複数のSTが支援しています。
+            ことばの発達や嚥下についてお気軽にご相談ください。
           </p>
-          <a href="#contact" class="service-card__link">詳しく見る →</a>
+          <a href="#contact" class="service-card__link">相談してみる →</a>
         </article>
 
-        <!-- サービスカード 2 -->
+        <!-- ポイント 2 -->
         <article class="service-card fade-in">
-          <div class="service-card__icon">🌤️</div>
-          <h3 class="service-card__title">デイサービス</h3>
+          <div class="service-card__icon">👶</div>
+          <h3 class="service-card__title">全員が小児対応の経験者。専門知識と温かい支援で</h3>
           <p class="service-card__body">
-            日帰りで施設に通い、食事・入浴・レクリエーションなどを楽しんでいただけます。
-            仲間との交流で笑顔と活力が生まれます。
+            看護師・リハスタッフ全員が小児の支援経験者です。小児専門の病院や療育センターで
+            経験を積んだスタッフばかりで、「小児のケアは初めて」というスタッフがいないため安心して相談できます。
+            スタッフ同士の連携も密に行い、お子さまの状態をチームで共有しながら支援を進めています。
           </p>
-          <a href="#contact" class="service-card__link">詳しく見る →</a>
+          <a href="#contact" class="service-card__link">相談してみる →</a>
         </article>
 
-        <!-- サービスカード 3 -->
+        <!-- ポイント 3 -->
         <article class="service-card fade-in">
-          <div class="service-card__icon">♿</div>
-          <h3 class="service-card__title">障害者支援</h3>
+          <div class="service-card__icon">🎮</div>
+          <h3 class="service-card__title">遊びも取り入れたリハビリで楽しみながら身体機能を伸ばすPT</h3>
           <p class="service-card__body">
-            障害者総合支援法に基づき、就労支援・生活介護・相談支援など、
-            自立した生活を送るための幅広いサポートを提供します。
+            PTは遊びを積極的に取り入れたリハビリを行います。お子さまが自然と身体を動かしたくなるような環境を作り、
+            楽しみながら発達を促すことを意識。お気に入りのおもちゃを使ったリハビリに、
+            親御さんが「これがリハビリなんですか？」と驚くことも。「やってみよう」という気持ちを育てます。
           </p>
-          <a href="#contact" class="service-card__link">詳しく見る →</a>
+          <a href="#contact" class="service-card__link">相談してみる →</a>
         </article>
 
-        <!-- サービスカード 4 -->
+        <!-- ポイント 4 -->
         <article class="service-card fade-in">
-          <div class="service-card__icon">📋</div>
-          <h3 class="service-card__title">ケアマネジメント</h3>
+          <div class="service-card__icon">💬</div>
+          <h3 class="service-card__title">「ことばを教える」のではなく「伝えたい」を引き出すST</h3>
           <p class="service-card__body">
-            介護支援専門員（ケアマネジャー）が、利用者さまに最適なケアプランを作成。
-            関係機関と連携しながら包括的な支援を行います。
+            お子さまが「自分から話したい」と思えるような環境を作ることを重視。じっくり待ちながら
+            遊びの中で自然に言葉を引き出す工夫をします。発話だけでなく、身振り・表情・視線などの
+            非言語コミュニケーションも大切に。嚥下ではPTとも連携し、姿勢や呼吸も見ながら成長を支えます。
           </p>
-          <a href="#contact" class="service-card__link">詳しく見る →</a>
+          <a href="#contact" class="service-card__link">相談してみる →</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 1日の流れセクション ===== -->
+  <section class="flow section" id="flow">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Daily Schedule</p>
+        <h2 class="section-title">1日の流れ</h2>
+        <p class="section-desc">
+          各スタッフの訪問例をご紹介します。お子さまの状態に合わせて柔軟に対応します。
+        </p>
+      </div>
+
+      <div class="flow__tabs fade-in">
+        <!-- タブボタン -->
+        <div class="flow__tab-btns" role="tablist">
+          <button class="flow__tab-btn flow__tab-btn--active" data-tab="nurse" role="tab" aria-selected="true">看護師</button>
+          <button class="flow__tab-btn" data-tab="pt" role="tab" aria-selected="false">PT（理学療法士）</button>
+          <button class="flow__tab-btn" data-tab="st-swallow" role="tab" aria-selected="false">ST（摂食・嚥下）</button>
+          <button class="flow__tab-btn" data-tab="st-lang" role="tab" aria-selected="false">ST（言語訓練）</button>
+        </div>
+
+        <!-- タブコンテンツ：看護師 -->
+        <div class="flow__tab-content flow__tab-content--active" id="tab-nurse" role="tabpanel">
+          <p class="flow__subtitle">看護師の訪問の流れ（例）</p>
+          <ol class="flow__list">
+            <li class="flow__item">
+              <span class="flow__time">16:00</span>
+              <div class="flow__detail">
+                <p class="flow__action">情報収集・バイタルサイン測定</p>
+                <p class="flow__note">ご家族から体調などの情報収集、バイタルサイン測定</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">16:10</span>
+              <div class="flow__detail">
+                <p class="flow__action">入浴準備・入浴介助</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">16:30</span>
+              <div class="flow__detail">
+                <p class="flow__action">ケア・更衣</p>
+                <p class="flow__note">気切バンド交換・保湿などのケア、更衣</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">16:45</span>
+              <div class="flow__detail">
+                <p class="flow__action">内服・夕食介助</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">17:05</span>
+              <div class="flow__detail">
+                <p class="flow__action">口腔ケア</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">17:10</span>
+              <div class="flow__detail">
+                <p class="flow__action">吸入</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">17:20</span>
+              <div class="flow__detail">
+                <p class="flow__action">体調ノート記載・ご家族へ申し送り</p>
+              </div>
+            </li>
+            <li class="flow__item flow__item--end">
+              <span class="flow__time">17:30</span>
+              <div class="flow__detail">
+                <p class="flow__action">訪問終了</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- タブコンテンツ：PT -->
+        <div class="flow__tab-content" id="tab-pt" role="tabpanel">
+          <p class="flow__subtitle">理学療法士の訪問の流れ（例）</p>
+          <ol class="flow__list">
+            <li class="flow__item">
+              <span class="flow__time">17:00</span>
+              <div class="flow__detail">
+                <p class="flow__action">情報収集</p>
+                <p class="flow__note">ご家族から体調などの情報収集</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">17:05</span>
+              <div class="flow__detail">
+                <p class="flow__action">リハビリ開始・現状の評価</p>
+                <p class="flow__note">その日のご本人の体調やモチベーション、好きなことに合わせながらプログラムを組みます</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">17:35</span>
+              <div class="flow__detail">
+                <p class="flow__action">体調ノート記載・ご家族へ申し送り</p>
+              </div>
+            </li>
+            <li class="flow__item flow__item--end">
+              <span class="flow__time">17:40</span>
+              <div class="flow__detail">
+                <p class="flow__action">訪問終了</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- タブコンテンツ：ST（摂食・嚥下） -->
+        <div class="flow__tab-content" id="tab-st-swallow" role="tabpanel">
+          <p class="flow__subtitle">言語聴覚士の訪問の流れ（例）｜摂食・嚥下訓練</p>
+          <ol class="flow__list">
+            <li class="flow__item">
+              <span class="flow__time">9:00</span>
+              <div class="flow__detail">
+                <p class="flow__action">訪問開始・情報収集・バイタルサイン測定</p>
+                <p class="flow__note">その日の状態で摂取する食形態や摂取するものをご家族と相談して決定します</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">9:10</span>
+              <div class="flow__detail">
+                <p class="flow__action">口腔マッサージ・咀嚼練習</p>
+                <p class="flow__note">口腔周囲のマッサージや口腔内のアイスマッサージ・咀嚼練習</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">9:30</span>
+              <div class="flow__detail">
+                <p class="flow__action">摂食開始</p>
+                <p class="flow__note">嚥下の状態や呼吸状態などを確認しながら摂食を進めていきます</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">9:50</span>
+              <div class="flow__detail">
+                <p class="flow__action">摂食終了・バイタルサイン測定・申し送り</p>
+                <p class="flow__note">肺雑音などを確認してご家族へ申し送り</p>
+              </div>
+            </li>
+            <li class="flow__item flow__item--end">
+              <span class="flow__time">10:00</span>
+              <div class="flow__detail">
+                <p class="flow__action">訪問終了</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- タブコンテンツ：ST（言語訓練） -->
+        <div class="flow__tab-content" id="tab-st-lang" role="tabpanel">
+          <p class="flow__subtitle">言語聴覚士の訪問の流れ（例）｜言語訓練</p>
+          <ol class="flow__list">
+            <li class="flow__item">
+              <span class="flow__time">13:00</span>
+              <div class="flow__detail">
+                <p class="flow__action">訪問開始・情報収集</p>
+                <p class="flow__note">ご家族から体調などの情報収集</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">13:05</span>
+              <div class="flow__detail">
+                <p class="flow__action">絵カードでの選択・マッチング</p>
+                <p class="flow__note">2択からその子に合わせながら増やしていく</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">13:15</span>
+              <div class="flow__detail">
+                <p class="flow__action">口の模倣・音声模倣</p>
+                <p class="flow__note">絵カードを使ってお口の模倣や音声模倣を行っていきます</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">13:25</span>
+              <div class="flow__detail">
+                <p class="flow__action">ごっこ遊びなどのやりとり遊び</p>
+                <p class="flow__note">言語の表出を促していきます</p>
+              </div>
+            </li>
+            <li class="flow__item">
+              <span class="flow__time">13:35</span>
+              <div class="flow__detail">
+                <p class="flow__action">ご家族への申し送り</p>
+              </div>
+            </li>
+            <li class="flow__item flow__item--end">
+              <span class="flow__time">13:40</span>
+              <div class="flow__detail">
+                <p class="flow__action">訪問終了</p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
@@ -240,7 +465,7 @@
         <p class="section-label">Staff</p>
         <h2 class="section-title">スタッフ紹介</h2>
         <p class="section-desc">
-          経験豊富な専門スタッフが、真心を込めてサポートします。
+          全員が小児対応の経験者。子ども大好きなスタッフが揃っています。
         </p>
       </div>
 
@@ -248,101 +473,40 @@
         <!-- スタッフカード 1 -->
         <article class="staff-card fade-in">
           <div class="staff-card__avatar" aria-hidden="true">👩‍⚕️</div>
-          <h3 class="staff-card__name">山田 花子</h3>
-          <p class="staff-card__role">介護福祉士 / 訪問介護リーダー</p>
-          <p class="staff-card__msg">「笑顔で帰っていただける毎日を大切に」</p>
+          <h3 class="staff-card__name">看護師スタッフ</h3>
+          <p class="staff-card__role">訪問看護師</p>
+          <p class="staff-card__msg">「安心して在宅での生活を送れるようサポートします」</p>
         </article>
 
         <!-- スタッフカード 2 -->
         <article class="staff-card fade-in">
-          <div class="staff-card__avatar" aria-hidden="true">👨‍⚕️</div>
-          <h3 class="staff-card__name">鈴木 一郎</h3>
-          <p class="staff-card__role">ケアマネジャー / 相談支援専門員</p>
-          <p class="staff-card__msg">「一緒に最善のプランを考えましょう」</p>
+          <div class="staff-card__avatar" aria-hidden="true">🧑‍⚕️</div>
+          <h3 class="staff-card__name">PTスタッフ</h3>
+          <p class="staff-card__role">理学療法士（PT）</p>
+          <p class="staff-card__msg">「遊びを通じて、お子さまの可能性を広げていきます」</p>
         </article>
 
         <!-- スタッフカード 3 -->
         <article class="staff-card fade-in">
-          <div class="staff-card__avatar" aria-hidden="true">👩‍💼</div>
-          <h3 class="staff-card__name">佐藤 美咲</h3>
-          <p class="staff-card__role">サービス提供責任者</p>
-          <p class="staff-card__msg">「安心してお任せください」</p>
+          <div class="staff-card__avatar" aria-hidden="true">👩‍🏫</div>
+          <h3 class="staff-card__name">STスタッフ</h3>
+          <p class="staff-card__role">言語聴覚士（ST）</p>
+          <p class="staff-card__msg">「お子さまの『伝えたい』を一緒に見つけましょう」</p>
         </article>
 
         <!-- スタッフカード 4 -->
         <article class="staff-card fade-in">
-          <div class="staff-card__avatar" aria-hidden="true">👨‍💼</div>
-          <h3 class="staff-card__name">田中 健太</h3>
-          <p class="staff-card__role">生活支援員 / 障害者担当</p>
-          <p class="staff-card__msg">「できることを一緒に増やしていきましょう」</p>
+          <div class="staff-card__avatar" aria-hidden="true">👩‍🏫</div>
+          <h3 class="staff-card__name">STスタッフ</h3>
+          <p class="staff-card__role">言語聴覚士（ST）</p>
+          <p class="staff-card__msg">「ことばの発達や嚥下、どんなことでもご相談ください」</p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 採用情報セクション ===== -->
-  <section class="recruit section section--dark" id="recruit">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-label">Recruit</p>
-        <h2 class="section-title">採用情報</h2>
-        <p class="section-desc">
-          一緒に、地域の笑顔を支えてくれる仲間を募集しています。
-        </p>
-      </div>
-
-      <div class="recruit__inner fade-in">
-        <div class="recruit__message">
-          <h3 class="recruit__heading">あなたの「やりたい」を活かせる職場です</h3>
-          <p class="recruit__body">
-            資格の有無や経験年数に関わらず、「人の役に立ちたい」という気持ちを持つ方を歓迎します。
-            充実した研修制度と先輩スタッフのサポートで、未経験からでも安心してスタートできます。
-          </p>
-        </div>
-
-        <!-- 募集職種テーブル -->
-        <div class="recruit__table-wrap">
-          <table class="recruit__table">
-            <thead>
-              <tr>
-                <th>職種</th>
-                <th>雇用形態</th>
-                <th>給与</th>
-                <th>資格</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>訪問介護スタッフ</td>
-                <td>正社員 / パート</td>
-                <td>月給 ○○万円〜</td>
-                <td>介護職員初任者研修以上</td>
-              </tr>
-              <tr>
-                <td>デイサービス介護士</td>
-                <td>正社員 / パート</td>
-                <td>月給 ○○万円〜</td>
-                <td>介護福祉士（優遇）</td>
-              </tr>
-              <tr>
-                <td>障害者支援員</td>
-                <td>正社員 / パート</td>
-                <td>月給 ○○万円〜</td>
-                <td>不問（経験者優遇）</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="recruit__cta">
-          <a href="#contact" class="btn btn--primary btn--large">応募・お問い合わせはこちら</a>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== お問い合わせセクション ===== -->
-  <section class="contact section" id="contact">
+  <section class="contact section section--dark" id="contact">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">Contact</p>
@@ -377,7 +541,7 @@
           </div>
           <div class="form-group">
             <label for="message" class="form-label">お問い合わせ内容 <span class="required">必須</span></label>
-            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="お気軽にご記入ください" required></textarea>
+            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="ことばの発達や嚥下のご相談など、お気軽にご記入ください" required></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--full">送信する</button>
         </form>
@@ -392,30 +556,93 @@
         <!-- フッターロゴ -->
         <div class="footer__brand">
           <a href="#top" class="footer__logo">
-            <span class="header__logo-mark">♡</span>
-            <span class="header__logo-text">〇〇ケア</span>
+            <span class="header__logo-icon" aria-hidden="true">
+              <svg class="logo-rainbow" viewBox="0 0 54 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 30 Q2 4 27 4 Q52 4 52 30" stroke="#ff6b6b" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+                <path d="M7 30 Q7 9 27 9 Q47 9 47 30"  stroke="#ffb347" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+                <path d="M12 30 Q12 14 27 14 Q42 14 42 30" stroke="#ffe066" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+                <path d="M17 30 Q17 18 27 18 Q37 18 37 30" stroke="#7ed957" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+                <path d="M22 30 Q22 22 27 22 Q32 22 32 30" stroke="#4fc3f7" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+                <circle cx="6"  cy="29" r="4" fill="white"/>
+                <circle cx="12" cy="29" r="4" fill="white"/>
+                <circle cx="9"  cy="26" r="4" fill="white"/>
+                <circle cx="42" cy="29" r="4" fill="white"/>
+                <circle cx="48" cy="29" r="4" fill="white"/>
+                <circle cx="45" cy="26" r="4" fill="white"/>
+              </svg>
+            </span>
+            <span class="header__logo-text">ルバート</span>
           </a>
-          <p class="footer__tagline">あなたらしい毎日を、一緒に。</p>
+          <p class="footer__tagline">お子さまの「できる」を、一緒に増やそう。</p>
+          <p class="footer__company">株式会社Cantabile</p>
         </div>
 
         <!-- フッターナビ -->
         <nav class="footer__nav" aria-label="フッターナビゲーション">
           <ul class="footer__nav-list">
-            <li><a href="#about" class="footer__nav-link">会社紹介</a></li>
-            <li><a href="#services" class="footer__nav-link">サービス</a></li>
+            <li><a href="#about" class="footer__nav-link">施設について</a></li>
+            <li><a href="#services" class="footer__nav-link">支援のポイント</a></li>
+            <li><a href="#flow" class="footer__nav-link">1日の流れ</a></li>
             <li><a href="#staff" class="footer__nav-link">スタッフ</a></li>
-            <li><a href="#recruit" class="footer__nav-link">採用情報</a></li>
             <li><a href="#contact" class="footer__nav-link">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 株式会社〇〇ケア. All Rights Reserved.</p>
+        <p class="footer__copy">&copy; 2026 株式会社Cantabile. All Rights Reserved.</p>
         <a href="#top" class="footer__totop" aria-label="ページトップへ戻る">↑ TOP</a>
       </div>
     </div>
   </footer>
+
+  <!-- ===== AIチャットウィジェット ===== -->
+  <!-- フローティング開閉ボタン -->
+  <button class="chat-fab" id="chatFab" aria-label="AIチャットを開く" aria-expanded="false">
+    <span class="chat-fab__icon chat-fab__icon--open">💬</span>
+    <span class="chat-fab__icon chat-fab__icon--close">✕</span>
+  </button>
+
+  <!-- チャットパネル -->
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="AIチャットボット" aria-hidden="true">
+    <!-- パネルヘッダー -->
+    <div class="chat-panel__header">
+      <div class="chat-panel__header-info">
+        <span class="chat-panel__avatar">🤖</span>
+        <div>
+          <p class="chat-panel__name">ルバート AIアシスタント</p>
+          <p class="chat-panel__status">オンライン</p>
+        </div>
+      </div>
+      <button class="chat-panel__close" id="chatClose" aria-label="チャットを閉じる">✕</button>
+    </div>
+
+    <!-- メッセージ表示エリア -->
+    <div class="chat-messages" id="chatMessages">
+      <!-- ウェルカムメッセージ（初期表示） -->
+      <div class="chat-msg chat-msg--bot">
+        <span class="chat-msg__avatar">🤖</span>
+        <div class="chat-msg__bubble">
+          こんにちは！小児訪問看護ルバートのAIアシスタントです。<br />
+          ことばの発達・リハビリ・訪問看護について、お気軽にご質問ください 😊
+        </div>
+      </div>
+    </div>
+
+    <!-- 入力エリア -->
+    <div class="chat-input-area">
+      <textarea
+        class="chat-input"
+        id="chatInput"
+        placeholder="メッセージを入力してください…"
+        rows="1"
+        aria-label="チャット入力欄"
+      ></textarea>
+      <button class="chat-send" id="chatSend" aria-label="送信">
+        <span>➤</span>
+      </button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

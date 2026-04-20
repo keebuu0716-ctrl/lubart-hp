@@ -198,4 +198,239 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===================================================
+  // 7. 1日の流れ：タブ切り替え
+  // ===================================================
+  const tabBtns     = document.querySelectorAll('.flow__tab-btn');
+  const tabContents = document.querySelectorAll('.flow__tab-content');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+
+      // ボタンのアクティブ切り替え
+      tabBtns.forEach(b => {
+        b.classList.remove('flow__tab-btn--active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('flow__tab-btn--active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // コンテンツのアクティブ切り替え
+      tabContents.forEach(content => {
+        content.classList.remove('flow__tab-content--active');
+      });
+      const activeContent = document.getElementById(`tab-${target}`);
+      if (activeContent) activeContent.classList.add('flow__tab-content--active');
+    });
+  });
+
+
+  // ===================================================
+  // 8. AIチャットウィジェット
+  // ===================================================
+  const chatFab      = document.getElementById('chatFab');
+  const chatPanel    = document.getElementById('chatPanel');
+  const chatClose    = document.getElementById('chatClose');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput    = document.getElementById('chatInput');
+  const chatSend     = document.getElementById('chatSend');
+
+  // 会話履歴（Claude APIに送る messages 配列）
+  let conversationHistory = [];
+
+  // チャットパネルを開く
+  const openChat = () => {
+    chatFab.classList.add('open');
+    chatFab.setAttribute('aria-expanded', 'true');
+    chatPanel.classList.add('open');
+    chatPanel.setAttribute('aria-hidden', 'false');
+    chatInput.focus();
+    scrollToBottom();
+  };
+
+  // チャットパネルを閉じる
+  const closeChat = () => {
+    chatFab.classList.remove('open');
+    chatFab.setAttribute('aria-expanded', 'false');
+    chatPanel.classList.remove('open');
+    chatPanel.setAttribute('aria-hidden', 'true');
+  };
+
+  chatFab.addEventListener('click', () => {
+    chatPanel.classList.contains('open') ? closeChat() : openChat();
+  });
+  chatClose.addEventListener('click', closeChat);
+
+  // メッセージ末尾にスクロール
+  const scrollToBottom = () => {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  };
+
+  // メッセージバブルを追加する汎用関数
+  const appendMessage = (role, html) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = `chat-msg chat-msg--${role}`;
+
+    if (role === 'bot') {
+      wrapper.innerHTML = `
+        <span class="chat-msg__avatar">🤖</span>
+        <div class="chat-msg__bubble">${html}</div>`;
+    } else if (role === 'user') {
+      wrapper.innerHTML = `
+        <div class="chat-msg__bubble">${escapeHtml(html)}</div>`;
+    } else if (role === 'error') {
+      wrapper.innerHTML = `
+        <span class="chat-msg__avatar">⚠️</span>
+        <div class="chat-msg__bubble">${html}</div>`;
+    }
+
+    chatMessages.appendChild(wrapper);
+    scrollToBottom();
+    return wrapper;
+  };
+
+  // ローディングドット表示
+  const showLoading = () => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'chat-msg chat-msg--bot chat-msg--loading';
+    wrapper.id = 'chatLoading';
+    wrapper.innerHTML = `
+      <span class="chat-msg__avatar">🤖</span>
+      <div class="chat-msg__bubble">
+        <span class="chat-dot"></span>
+        <span class="chat-dot"></span>
+        <span class="chat-dot"></span>
+      </div>`;
+    chatMessages.appendChild(wrapper);
+    scrollToBottom();
+  };
+
+  // ローディングドットを削除
+  const hideLoading = () => {
+    const el = document.getElementById('chatLoading');
+    if (el) el.remove();
+  };
+
+  // HTML エスケープ（ユーザー入力を安全に表示）
+  const escapeHtml = (str) =>
+    str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+       .replace(/"/g, '&quot;').replace(/\n/g, '<br />');
+
+  // テキストを改行対応HTMLに変換（ボット応答用）
+  const textToHtml = (str) =>
+    escapeHtml(str).replace(/&lt;br \/&gt;/g, '<br />');
+
+  // 送信処理
+  const sendMessage = async () => {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    // ユーザーメッセージを表示 & 履歴に追加
+    appendMessage('user', text);
+    conversationHistory.push({ role: 'user', content: text });
+
+    // 入力欄リセット・無効化
+    chatInput.value = '';
+    chatInput.style.height = 'auto';
+    chatSend.disabled = true;
+    chatInput.disabled = true;
+
+    // ローディング表示
+    showLoading();
+
+    try {
+      // SSE ストリームで /api/chat を呼び出す
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: conversationHistory }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTPエラー: ${response.status}`);
+      }
+
+      // ローディングを消してボットバブルを準備
+      hideLoading();
+      const botWrapper = appendMessage('bot', '');
+      const bubble = botWrapper.querySelector('.chat-msg__bubble');
+
+      let fullText = ''; // ストリームで積み上げるテキスト
+
+      // SSE テキストを逐次読み込み
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+
+        // 改行区切りで SSE イベントを分割
+        const lines = buffer.split('\n');
+        buffer = lines.pop(); // 末尾の未完行はバッファに残す
+
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          const payload = line.slice(6).trim();
+          if (payload === '[DONE]') break;
+
+          try {
+            const json = JSON.parse(payload);
+
+            if (json.error) {
+              // エラーレスポンスの場合
+              bubble.innerHTML = `<span style="color:#c0392b">⚠️ ${escapeHtml(json.error)}</span>`;
+              break;
+            }
+
+            if (json.text) {
+              fullText += json.text;
+              // 改行を <br> に変換してリアルタイム表示
+              bubble.innerHTML = escapeHtml(fullText).replace(/\n/g, '<br />');
+              scrollToBottom();
+            }
+          } catch {
+            // JSONパース失敗は無視
+          }
+        }
+      }
+
+      // 会話履歴にボットの返答を追加
+      if (fullText) {
+        conversationHistory.push({ role: 'assistant', content: fullText });
+      }
+
+    } catch (err) {
+      hideLoading();
+      appendMessage('error', `通信エラーが発生しました。<br /><small>${escapeHtml(err.message)}</small>`);
+      console.error('チャット通信エラー:', err);
+    } finally {
+      // 入力欄を再有効化
+      chatSend.disabled = false;
+      chatInput.disabled = false;
+      chatInput.focus();
+    }
+  };
+
+  // 送信ボタンクリック
+  chatSend.addEventListener('click', sendMessage);
+
+  // Enter で送信（Shift+Enter は改行）
+  chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+
+  // テキストエリアの高さを入力に合わせて自動調整
+  chatInput.addEventListener('input', () => {
+    chatInput.style.height = 'auto';
+    chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px';
+  });
+
 }); // DOMContentLoaded 終了

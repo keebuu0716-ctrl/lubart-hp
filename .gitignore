@@ -1,0 +1,8 @@
+# APIキーなど機密情報（絶対にGitに含めない）
+.env
+
+# npmパッケージ（npm installで再生成できる）
+node_modules/
+
+# macOS
+.DS_Store
