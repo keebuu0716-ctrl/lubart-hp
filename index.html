@@ -14,6 +14,22 @@
 
   <!-- ===== ヘッダー ===== -->
   <header class="header" id="header">
+
+    <!-- 上段：電話番号・営業時間バー -->
+    <div class="header__topbar">
+      <div class="header__topbar-inner">
+        <span class="header__topbar-item">
+          <span class="header__topbar-icon" aria-hidden="true">📞</span>
+          <a href="tel:08041390215" class="header__topbar-tel">080-4139-0215</a>
+        </span>
+        <span class="header__topbar-item header__topbar-hours">
+          <span class="header__topbar-icon" aria-hidden="true">🕐</span>
+          平日 10:00〜19:00（土日祝も状況によりご相談可）
+        </span>
+      </div>
+    </div>
+
+    <!-- 下段：ロゴ＋ナビ -->
     <div class="header__inner">
       <!-- ロゴ -->
       <a href="#top" class="header__logo">
@@ -60,6 +76,11 @@
 
     <!-- スマホ用ドロワーメニュー -->
     <nav class="drawer" id="drawer" aria-label="モバイルナビゲーション">
+      <!-- ドロワー内電話番号 -->
+      <div class="drawer__tel-wrap">
+        <a href="tel:08041390215" class="drawer__tel">📞 080-4139-0215</a>
+        <p class="drawer__hours">平日 10:00〜19:00</p>
+      </div>
       <ul class="drawer__list">
         <li><a href="#about" class="drawer__link">施設について</a></li>
         <li><a href="#services" class="drawer__link">支援のポイント</a></li>
