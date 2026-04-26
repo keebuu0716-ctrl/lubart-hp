@@ -43,7 +43,7 @@
         <ul class="header__nav-list">
           <li><a href="#about" class="header__nav-link">施設について</a></li>
           <li><a href="#services" class="header__nav-link">支援のポイント</a></li>
-          <li><a href="#flow" class="header__nav-link">1日の流れ</a></li>
+          <li><a href="#howto" class="header__nav-link">ご利用の流れ</a></li>
           <li><a href="#staff" class="header__nav-link">スタッフ</a></li>
           <li><a href="#recruit" class="header__nav-link">採用情報</a></li>
           <li><a href="#contact" class="header__nav-link header__nav-link--cta">お問い合わせ</a></li>
@@ -63,7 +63,7 @@
       <ul class="drawer__list">
         <li><a href="#about" class="drawer__link">施設について</a></li>
         <li><a href="#services" class="drawer__link">支援のポイント</a></li>
-        <li><a href="#flow" class="drawer__link">1日の流れ</a></li>
+        <li><a href="#howto" class="drawer__link">ご利用の流れ</a></li>
         <li><a href="#staff" class="drawer__link">スタッフ</a></li>
         <li><a href="#recruit" class="drawer__link">採用情報</a></li>
         <li><a href="#contact" class="drawer__link drawer__link--cta">お問い合わせ</a></li>
@@ -117,6 +117,34 @@
     <div class="hero__scroll">
       <span class="hero__scroll-text">Scroll</span>
       <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ===== お知らせセクション ===== -->
+  <section class="news section" id="news">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">News</p>
+        <h2 class="section-title">お知らせ</h2>
+      </div>
+
+      <ul class="news__list fade-in">
+        <li class="news__item">
+          <time class="news__date" datetime="2026-04-01">2026.04.01</time>
+          <span class="news__badge news__badge--new">NEW</span>
+          <a href="#contact" class="news__title">ホームページを公開しました</a>
+        </li>
+        <li class="news__item">
+          <time class="news__date" datetime="2026-04-01">2026.04.01</time>
+          <span class="news__badge">お知らせ</span>
+          <a href="#contact" class="news__title">現在、看護師・PT・OT・STを募集しています。お気軽にお問い合わせください。</a>
+        </li>
+        <li class="news__item">
+          <time class="news__date" datetime="2026-04-01">2026.04.01</time>
+          <span class="news__badge">サービス</span>
+          <a href="#contact" class="news__title">新規ご利用のご相談を随時受け付けています。まずはお電話またはフォームよりご連絡ください。</a>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -200,6 +228,43 @@
             <span class="stat-card__num">4<small>職種</small></span>
             <span class="stat-card__label">チームで連携</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 代表挨拶セクション ===== -->
+  <section class="greeting section section--light" id="greeting">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Greeting</p>
+        <h2 class="section-title">代表からのご挨拶</h2>
+      </div>
+
+      <div class="greeting__inner fade-in">
+        <!-- 代表写真エリア -->
+        <div class="greeting__photo">
+          <div class="greeting__photo-placeholder" aria-hidden="true">
+            <span class="greeting__photo-icon">👤</span>
+          </div>
+          <p class="greeting__name">代表・管理者名</p>
+          <p class="greeting__title-label">管理者 / 看護師</p>
+        </div>
+
+        <!-- 挨拶文 -->
+        <div class="greeting__text">
+          <p class="greeting__body">
+            ルバートのホームページをご覧いただきありがとうございます。
+          </p>
+          <p class="greeting__body">
+            私たちは「お子さまの可能性を、ご家庭という場所で最大限に広げたい」という想いからこの訪問看護ステーションを立ち上げました。
+            看護師・PT・OT・STがチームとなり、お子さまお一人おひとりの生活に寄り添いながら、「できる」を少しずつ積み重ねていきます。
+          </p>
+          <p class="greeting__body">
+            訪問看護はまだ「よくわからない」という方も多いかと思います。どんな小さなご相談でも構いません。
+            気になることがあれば、ぜひ一度お気軽にお声がけください。
+          </p>
+          <p class="greeting__sign">小児訪問看護ステーション ルバート<br /><strong>代表・管理者名</strong></p>
         </div>
       </div>
     </div>
@@ -466,6 +531,73 @@
     </div>
   </section>
 
+  <!-- ===== ご利用の流れセクション ===== -->
+  <section class="howto section" id="howto">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">How to Use</p>
+        <h2 class="section-title">ご利用の流れ</h2>
+        <p class="section-desc">
+          はじめての方もご安心ください。お問い合わせから訪問開始まで丁寧にご案内します。
+        </p>
+      </div>
+
+      <ol class="howto__steps fade-in">
+        <!-- ステップ 1 -->
+        <li class="howto__step">
+          <div class="howto__step-num">01</div>
+          <div class="howto__step-body">
+            <h3 class="howto__step-title">お問い合わせ・ご相談</h3>
+            <p class="howto__step-desc">
+              電話またはお問い合わせフォームよりご連絡ください。
+              「うちの子に訪問看護は必要？」という段階でのご相談も大歓迎です。
+            </p>
+          </div>
+        </li>
+
+        <!-- ステップ 2 -->
+        <li class="howto__step">
+          <div class="howto__step-num">02</div>
+          <div class="howto__step-body">
+            <h3 class="howto__step-title">主治医への相談・指示書の依頼</h3>
+            <p class="howto__step-desc">
+              訪問看護の利用には主治医の「訪問看護指示書」が必要です。
+              かかりつけの先生にご相談ください。手続きの流れもサポートします。
+            </p>
+          </div>
+        </li>
+
+        <!-- ステップ 3 -->
+        <li class="howto__step">
+          <div class="howto__step-num">03</div>
+          <div class="howto__step-body">
+            <h3 class="howto__step-title">ご契約・計画書の作成</h3>
+            <p class="howto__step-desc">
+              スタッフがご自宅を訪問し、お子さまの状態や目標をヒアリング。
+              個別の支援計画書を作成してご説明します。
+            </p>
+          </div>
+        </li>
+
+        <!-- ステップ 4 -->
+        <li class="howto__step">
+          <div class="howto__step-num">04</div>
+          <div class="howto__step-body">
+            <h3 class="howto__step-title">訪問看護スタート</h3>
+            <p class="howto__step-desc">
+              担当スタッフが定期的にご自宅へ訪問します。
+              看護師・PT・OT・STがチームで連携しながら支援を進めます。
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="howto__cta fade-in">
+        <a href="#contact" class="btn btn--primary btn--large">まずはお問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== スタッフ紹介セクション ===== -->
   <section class="staff section" id="staff">
     <div class="container">
@@ -659,8 +791,9 @@
           <ul class="footer__nav-list">
             <li><a href="#about" class="footer__nav-link">施設について</a></li>
             <li><a href="#services" class="footer__nav-link">支援のポイント</a></li>
-            <li><a href="#flow" class="footer__nav-link">1日の流れ</a></li>
+            <li><a href="#howto" class="footer__nav-link">ご利用の流れ</a></li>
             <li><a href="#staff" class="footer__nav-link">スタッフ</a></li>
+            <li><a href="#recruit" class="footer__nav-link">採用情報</a></li>
             <li><a href="#contact" class="footer__nav-link">お問い合わせ</a></li>
           </ul>
         </nav>
